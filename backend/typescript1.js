@@ -1,0 +1,13 @@
+"use strict";
+exports.__esModule = true;
+var a = 40;
+var b = 50;
+var c = "kumar";
+var d = 50;
+var f = "kumar";
+var g = true;
+var myarr = [10, 20, 30, 40, 50, "kumar", "ravi"];
+var myarr1 = ["kumar", "pooja"];
+var myarr2 = [10, 20, 30, 50, 40, 60];
+var myarr3 = [20, "kumar", true, 50, "ravi"];
+exports["default"] = a;
