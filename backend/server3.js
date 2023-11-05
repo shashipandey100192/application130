@@ -1,9 +1,14 @@
 const http =require('http');
+const path = require('path');
+const fs = require('fs');
 
 const myserver = http.createServer((req,res)=>{
     if(req.url=="/")
     {
+        const mypath = path.dirname(req.url);
         res.write("<h1>this is home page install nodemon</h1>");
+        console.log(fs);
+
         res.end();
     }
     else if(req.url=="/about")
