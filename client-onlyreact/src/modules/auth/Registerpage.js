@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react'
 
 function Registerpage() {
-const [svariable,sfunction]=useState(600);
+const [svariable,sfunction]=useState();
 
 const myfunc = ()=>{
     sfunction("computer");

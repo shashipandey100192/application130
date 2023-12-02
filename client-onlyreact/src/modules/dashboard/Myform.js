@@ -8,8 +8,7 @@ function Myform() {
 
 const mysubmit = (eles)=>
 {
-  // console.log(eles);
-  // console.log(formvalue);
+
   mydata.push(formvalue);
   console.log(mydata);
   localStorage.setItem("myformdata",JSON.stringify(mydata));

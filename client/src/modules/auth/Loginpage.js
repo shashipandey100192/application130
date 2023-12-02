@@ -1,39 +1,34 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-import { useAuth0 } from "@auth0/auth0-react";
+import React from 'react';
+import {Link} from 'react-router-dom';
 
 function Loginpage() {
-    const { loginWithRedirect } = useAuth0();
-  return (
-   <div className='mylogin'>
-    <div className='rounded'>
-        <div className='container'>
-
-            <div className='row'>
-            <div className='col-12 text-center'>
-                   <h2>User Registerpage Page</h2>
-                </div>
-                <div className='col-12'>
-                    <label className="form-label">Email address</label>
-                    <input type='email' className='form-control' placeholder='email id'/>
-                </div>
-                <div className='col-12'>
-                    <label className="form-label">password</label>
-                    <input type='password' className='form-control' placeholder='password'/>
-                </div>
-                <div className='col-12 mt-2 text-center'>
-                   <button className='btn btn-primary'>submit</button>
-                   <button className='btn btn-danger ms-2'>cancel</button>
-                   <Link to="myform">New register</Link>
-                  
-
+    return (
+        <div className='container mt-5'>
+            <div className='row justify-content-md-center'>
+                <div className='col-5'>
+                       
+                    <form className='border p-5 bg-light shadow'> 
+                    <h1 className='text-center'>Login page</h1>
+                        <div className="mb-3">
+                            <label className="form-label">Email address</label>
+                            <input type="email" className="form-control"/> 
+                        </div>
+                        <div className="mb-3">
+                            <label className="form-label">Phone No</label>
+                            <input type="text" className="form-control"/> 
+                        </div>
+                        <div className="mb-3">
+                            <label className="form-label">Password</label>
+                            <input type="text" className="form-control"/> 
+                        </div>
+                        <button type="submit" className="btn btn-primary">Login</button>
+                        <Link type="submit" className="btn" to="dashboard">dashboard</Link>
+                        <Link type="submit" className="btn" to="registor">New Registor</Link>
+                    </form>
                 </div>
             </div>
         </div>
-    </div>
-
-   </div>
-  )
+    )
 }
 
 export default Loginpage
