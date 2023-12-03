@@ -9,10 +9,10 @@ const port = process.env.port || 8900
 
 
 
-
+myapp.use(cors());
 myapp.use(express.json());
 myapp.use(myappa);
-myapp.use(cors());
+
 
 
 

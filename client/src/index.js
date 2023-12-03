@@ -7,6 +7,7 @@ import {BrowserRouter,Route,Routes} from 'react-router-dom';
 import Landingpage from './modules/dashboard/Landingpage';
 import Navbar from './modules/shares/Navbar';
 import Registor from './modules/auth/Registor';
+import Userdetails from './modules/dashboard/Userdetails';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -18,6 +19,7 @@ root.render(
         <Route path='' element={<Loginpage/>}></Route>
         <Route path='dashboard' element={<Landingpage/>}></Route>
         <Route path='registor' element={<Registor/>}/>
+        <Route path='dashboard/:id' element={<Userdetails/>}/>
       </Routes>
     
     </BrowserRouter>

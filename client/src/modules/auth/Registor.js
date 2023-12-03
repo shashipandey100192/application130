@@ -24,9 +24,24 @@ function Registor() {
         })
       }
 
-const mysubmit = ()=>{
-    console.log(user);
+/*submit api */
+
+const mysubmit = async ()=>{
+   
+    const { email, phone,gender,pass,dob } = user;
+    const res = await fetch("http://localhost:6400/create", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            email, phone,gender,pass,dob
+        })
+    })
+    const data = await res.json();
+    console.log(data);
+    window.location.href="/dashboard";
 }
+
+
 
 
     return (
