@@ -1,17 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import axios from 'axios';
 
 function Landingpage() {
 const [getapi,getapifunc]=useState([]);
     useEffect(()=>{
+        myalldatas();
+},[])
+
+const myalldatas = ()=>{
     fetch('http://localhost:6400/alldata')
         .then(res => res.json())
         .then((data) => {
             console.log(data);
             getapifunc(data);
-        })   
-},[])
+        })
+}
+
+
+const deleteuser = async(id)=>{
+        axios.delete(`http://localhost:6400/deleterecord/${id}`)
+        .then(()=>{
+            myalldatas();
+        });
+       
+
+
+}
+
     
     return (
         <div className='container mt-3'>
@@ -65,6 +81,7 @@ const [getapi,getapifunc]=useState([]);
                                 <th scope="col">Gender</th>
                                 <th scope="col">DOB</th>
                                 <th scope="col">Password</th>
+                                <th scope="col">Profile Pic</th>
                                 <th scope="col">actions</th>
                             </tr>
                         </thead>
@@ -78,10 +95,11 @@ const [getapi,getapifunc]=useState([]);
                                 <td>{d.phone}</td>
                                 <td>{d.gender}</td>
                                 <td>{d.dob}</td>
+                                <td><img src={d.profile} width={50} alt='d.name'/></td>
                                 <td>{d.pass}</td>
                                 <td className='text-end'>
-                                    <button className='btn btn-danger btn-sm'>Del</button>
-                                    <button className='btn btn-info btn-sm ms-2'>Edit</button>
+                                    <button className='btn btn-danger btn-sm' onClick={()=>deleteuser(d._id)}>Del</button>
+                                    <Link className='btn btn-info btn-sm ms-2' to={`edit/${d._id}`}>Edit</Link>
                                     <Link className='btn btn-warning btn-sm ms-2' to={d._id}>View</Link>
                                 </td>
                             </tr>

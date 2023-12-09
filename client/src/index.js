@@ -8,6 +8,7 @@ import Landingpage from './modules/dashboard/Landingpage';
 import Navbar from './modules/shares/Navbar';
 import Registor from './modules/auth/Registor';
 import Userdetails from './modules/dashboard/Userdetails';
+import Editprofile from './modules/auth/Editrecord';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -20,6 +21,7 @@ root.render(
         <Route path='dashboard' element={<Landingpage/>}></Route>
         <Route path='registor' element={<Registor/>}/>
         <Route path='dashboard/:id' element={<Userdetails/>}/>
+        <Route path='dashboard/edit/:id' element={<Editprofile/>}/>
       </Routes>
     
     </BrowserRouter>

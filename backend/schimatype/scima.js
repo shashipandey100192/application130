@@ -15,6 +15,9 @@ const schimatype = new mongodb.Schema({
     },
     pass:{
         type:String
+    },
+    profile:{
+        type:String
     }
 
     });

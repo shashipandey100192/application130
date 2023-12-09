@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState,useEffect } from 'react';
+import { Link,useParams } from 'react-router-dom';
 
 
 
 
-function Registor() {
+function Editprofile() {
+    const { id } = useParams();
     const [user ,setusers]=useState({
         email:'',
         phone:'',
@@ -25,8 +26,24 @@ function Registor() {
         })
       }
 
-/*submit api */
+   
+      useEffect(() => {
+        fetch(`http://localhost:6400/details/${id}`)
+          .then(res => res.json())
+          .then((data) => {
+            console.log(data);
+            setusers(data);
+          })
+      }, [])
+    
 
+
+
+
+
+
+
+/*submit api */
 const mysubmit = async ()=>{
    
     const { email, phone,gender,pass,dob,profile } = user;
@@ -48,10 +65,10 @@ const mysubmit = async ()=>{
     return (
         <div className='container mt-5'>
             <div className='row justify-content-md-center'>
-                <div className='col-5'>
+                <div className='col-6'>
 
                     <form className='border p-5 bg-dark shadow text-white' >
-                        <h1 className='text-center'>User Registor Page</h1>
+                        <h1 className='text-center'>Edit User Profile Page</h1>
                         <div className="mb-3">
                             <label className="form-label">Email address</label>
                             <input type="email" className="form-control" name="email" value={user.email} onChange={setdata}/>
@@ -67,11 +84,13 @@ const mysubmit = async ()=>{
                         <div className="mb-3">
                             <label className="form-label">Gender</label><br />
                             <div className="form-check form-check-inline">
-                                <input className="form-check-input" type="radio" value="male" name="gender" onChange={setdata}/>
+                                <input className="form-check-input" type="radio" value="male" name="gender" onChange={setdata}
+                                checked= {user.gender==='male' ? true: false}
+                                />
                                 <label className="form-check-label">Male</label>
                             </div>
                             <div className="form-check form-check-inline">
-                                <input className="form-check-input" type="radio" value="female" name="gender" onChange={setdata}/>
+                                <input className="form-check-input" type="radio" value="female" name="gender" onChange={setdata} checked= {user.gender==='female' ? true: false}/>
                                 <label className="form-check-label">Female</label>
                             </div>
 
@@ -93,4 +112,4 @@ const mysubmit = async ()=>{
     )
 }
 
-export default Registor
+export default Editprofile
