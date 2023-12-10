@@ -74,7 +74,7 @@ const deleteuser = async(id)=>{
                     <table className="table table-bordered border-primary">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
+                                <th scope="col">Id</th>
                                 <th scope="col">Mongodb-Id</th>
                                 <th scope="col">email Id</th>
                                 <th scope="col">Phone No</th>
@@ -89,8 +89,8 @@ const deleteuser = async(id)=>{
                             {getapi.map((d,s)=>{
                                 return(
                                     <tr key={s}>
-                                <th scope="row">{d._id}</th>
                                 <th scope="row">{++s}</th>
+                                <th>{d._id}</th>
                                 <td>{d.email}</td>
                                 <td>{d.phone}</td>
                                 <td>{d.gender}</td>
