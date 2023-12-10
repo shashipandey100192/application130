@@ -9,7 +9,7 @@ const [getapi,getapifunc]=useState([]);
 },[])
 
 const myalldatas = ()=>{
-    fetch('http://localhost:6400/alldata')
+    fetch('https://backendapi-sblu.onrender.com/alldata')
         .then(res => res.json())
         .then((data) => {
             // console.log(data);
@@ -19,7 +19,7 @@ const myalldatas = ()=>{
 
 
 const deleteuser = async(id)=>{
-        axios.delete(`http://localhost:6400/deleterecord/${id}`)
+        axios.delete(`https://backendapi-sblu.onrender.com/deleterecord/${id}`)
         .then(()=>{
             myalldatas();
         });

@@ -7,7 +7,7 @@ function Userdetails() {
   const { id } = useParams();
   console.log(id);
   useEffect(() => {
-    fetch(`http://localhost:6400/details/${id}`)
+    fetch(`https://backendapi-sblu.onrender.com/details/${id}`)
       .then(res => res.json())
       .then((data) => {
         console.log(data);

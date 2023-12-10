@@ -28,7 +28,7 @@ function Editprofile() {
 
    
       useEffect(() => {
-        fetch(`http://localhost:6400/details/${id}`)
+        fetch(`https://backendapi-sblu.onrender.com/details/${id}`)
           .then(res => res.json())
           .then((data) => {
             console.log(data);
@@ -47,7 +47,7 @@ function Editprofile() {
 const userupdate = async ()=>{
    
     const { email, phone,gender,pass,dob,profile } = user;
-    const res = await fetch(`http://localhost:6400/updaterecord/${id}`, {
+    const res = await fetch(`https://backendapi-sblu.onrender.com/updaterecord/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

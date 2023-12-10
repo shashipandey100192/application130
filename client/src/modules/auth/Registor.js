@@ -30,7 +30,7 @@ function Registor() {
 const mysubmit = async ()=>{
    
     const { email, phone,gender,pass,dob,profile } = user;
-    const res = await fetch("http://localhost:6400/create", {
+    const res = await fetch("https://backendapi-sblu.onrender.com/create", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
