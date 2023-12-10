@@ -21,7 +21,7 @@ function Userdetails() {
       <div className='container shadow mt-3 p-3'>
         <div className='row'>
           <div className='col-12 text-end border-bottom p-4'>
-          <Link className='btn btn-info btn-sm ms-2' to={`/dashboard/edit/${singleuser._id}`}>Edit</Link>
+          <Link className='btn btn-info btn-sm me-2' to={`/dashboard/edit/${singleuser._id}`}>Edit</Link>
             <Link to="/dashboard" className='btn btn-dark btn-sm'>Back</Link>
           </div>
           <div className='col-md-6 p-5'>
@@ -44,12 +44,12 @@ function Userdetails() {
               <thead>
                 <tr>
                   <th scope="col">Mongodb-Id</th>
-                  <th scope="col">email Id</th>
+                  <th scope="col">Email Id</th>
                   <th scope="col">Phone No</th>
                   <th scope="col">Gender</th>
                   <th scope="col">DOB</th>
+                  <th scope="col">Profile</th>
                   <th scope="col">Password</th>
-                  <th scope="col">Profile Pic</th>
                 </tr>
               </thead>
               <tbody>

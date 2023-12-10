@@ -76,13 +76,13 @@ const deleteuser = async(id)=>{
                             <tr>
                                 <th scope="col">Id</th>
                                 <th scope="col">Mongodb-Id</th>
-                                <th scope="col">email Id</th>
+                                <th scope="col">Email Id</th>
                                 <th scope="col">Phone No</th>
                                 <th scope="col">Gender</th>
                                 <th scope="col">DOB</th>
+                                <th scope="col">Profile</th>
                                 <th scope="col">Password</th>
-                                <th scope="col">Profile Pic</th>
-                                <th scope="col">actions</th>
+                                <th scope="col">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
