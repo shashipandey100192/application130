@@ -12,7 +12,7 @@ const myalldatas = ()=>{
     fetch('http://localhost:6400/alldata')
         .then(res => res.json())
         .then((data) => {
-            console.log(data);
+            // console.log(data);
             getapifunc(data);
         })
 }

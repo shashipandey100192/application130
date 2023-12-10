@@ -43,21 +43,22 @@ function Editprofile() {
 
 
 
-/*submit api */
-const mysubmit = async ()=>{
+
+const userupdate = async ()=>{
    
     const { email, phone,gender,pass,dob,profile } = user;
-    const res = await fetch("http://localhost:6400/create", {
-        method: "POST",
+    const res = await fetch(`http://localhost:6400/updaterecord/${id}`, {
+        method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
             email, phone,gender,pass,dob,profile
         })
     })
     const data = await res.json();
-    console.log(data);
+    // console.log(data);
     window.location.href="/dashboard";
 }
+
 
 
 
@@ -103,7 +104,7 @@ const mysubmit = async ()=>{
                             <label className="form-label">Profile picture (URL Only)</label>
                             <input type="text" className="form-control" name='profile' value={user.profile} onChange={setdata}/>
                         </div>
-                        <button type="button" className="btn btn-primary" onClick={mysubmit}>Registor Now</button>
+                        <button type="button" className="btn btn-primary" onClick={userupdate}>Update</button>
                         <Link type="submit" className="btn btn-outline-warning ms-3" to="/dashboard">dashboard</Link>
                     </form>
                 </div>

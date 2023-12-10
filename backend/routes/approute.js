@@ -51,4 +51,14 @@ myapp.delete("/deleterecord/:id",async(req,res)=>{
 
 
 
+myapp.patch("/updaterecord/:id",async(req,res)=>{
+    const {id} = req.params;
+    const recordupdate = await mypattern.findByIdAndUpdate(id,req.body,{new:true});
+    console.log(recordupdate);
+    res.status(201).json(recordupdate);
+});
+
+
+
+
 module.exports = myapp
