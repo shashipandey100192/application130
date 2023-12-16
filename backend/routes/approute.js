@@ -59,6 +59,30 @@ myapp.patch("/updaterecord/:id",async(req,res)=>{
 });
 
 
+/* login api */
+
+myapp.post("/login", async(req,res)=>{
+    console.log(req.body);
+    const {email,pass} = req.body;
+      
+    if(!email || !pass){
+        return res.status(422).json({error:"user and password don't match"});
+       
+    }
+    else{
+        const uservalidation = await mypattern.findOne({email:email});
+        console.log(uservalidation);
+        if(uservalidation.email===email && uservalidation.pass===pass)
+        {
+            res.status(200).json({message:'welcome',status: 201}); 
+        }
+        else{
+            res.status(250).json({error:"password not match"});
+        }
+    }
+});
+
+
 
 
 module.exports = myapp
